@@ -1,0 +1,82 @@
+<nav class="framer-sleek-navbar">
+    <div class="framer-sleek-nav-wrapper">
+        <a class="framer-sleek-logo" href="./#hero-section">
+            <img src="https://framerusercontent.com/images/Y7yxqeVWtkTJtBRLqfMgXaslnI.png" alt="Logo">
+        </a>
+        <div class="framer-sleek-links">
+            <a href="projects.html" class="framer-sleek-link">Projects</a>
+            <a href="about.html" class="framer-sleek-link">About/Contact</a>
+        </div>
+    </div>
+</nav>
+<style>
+.framer-sleek-navbar {
+    position: fixed;
+    top: 24px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    pointer-events: none;
+}
+.framer-sleek-nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px;
+    background: rgba(17, 17, 17, 0.7);
+    border-radius: 32px;
+    box-shadow: 0 4px 32px 0 rgba(0,0,0,0.10);
+    border: 1px solid rgba(255,255,255,0.10);
+    backdrop-filter: blur(12px);
+    padding: 0.5rem 2.2rem;
+    pointer-events: auto;
+}
+.framer-sleek-logo {
+    display: flex;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #232323;
+    margin-right: 1.5rem;
+}
+.framer-sleek-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 16px;
+}
+.framer-sleek-links {
+    display: flex;
+    gap: 1.8rem;
+}
+.framer-sleek-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.18rem;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    border-radius: 12px;
+    transition: background 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+}
+.framer-sleek-link:hover, .framer-sleek-link.active {
+    background: rgba(255,255,255,0.10);
+    color: #a3e635;
+}
+@media (max-width: 700px) {
+    .framer-sleek-nav-wrapper {
+        flex-direction: row;
+        padding: 0.5rem 1rem;
+        max-width: 98vw;
+    }
+    .framer-sleek-links {
+        gap: 1rem;
+    }
+}
+</style> 

@@ -1,0 +1,67 @@
+<footer class="framer-footer">
+  <div class="footer-content">
+    <span>© 2024 Manas Bhatia. All rights reserved.</span>
+    <div class="footer-socials">
+      <a href="#" title="X"><i class="fab fa-x-twitter"></i></a>
+      <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:your@email.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.framer-footer {
+  width: 100%;
+  background: rgba(17, 17, 17, 0.8);
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -2px 16px 0 rgba(0,0,0,0.08);
+  backdrop-filter: blur(8px);
+  padding: 1.2rem 0 1.2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 48px;
+  z-index: 10000;
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+.footer-content span {
+  color: #e5e5e5;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.footer-socials {
+  display: flex;
+  gap: 1.2rem;
+}
+.footer-socials a {
+  color: #fff;
+  font-size: 1.3rem;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+.footer-socials a:hover {
+  background: #232323;
+}
+@media (max-width: 700px) {
+  .framer-footer {
+    border-radius: 16px 16px 0 0;
+    padding: 1rem 0;
+  }
+  .footer-content span {
+    font-size: 0.95rem;
+  }
+}
+</style> 

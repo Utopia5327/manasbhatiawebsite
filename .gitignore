@@ -1,0 +1,13 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!about.html
+!cursor.svg
+!footer.html
+!header.html
+!index.html
+!landing.html
+!projects.html
+!sketch.js 

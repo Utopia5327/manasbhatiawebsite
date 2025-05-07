@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* reset and full-window canvas behind everything */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Roboto', sans-serif;
+      background: #141414;
+      color: #fff;
+      cursor: url('cursor.svg') 16 16, auto;
+    }
+    /* canvas sits behind content */
+    #mycelium-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .content {
+      position: relative;
+      z-index: 2;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+    .content.fade-out {
+      opacity: 0;
+    }
+    .name {
+      font-size: 4rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: url('cursor.svg') 16 16, pointer;
+      transition: all 0.5s ease;
+      padding: 1rem 2rem;
+      color: white;
+      text-decoration: none;
+      position: relative;
+    }
+    .name:hover {
+      transform: scale(1.05);
+      letter-spacing: 0.3em;
+    }
+    .transition-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #141414;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 2s ease;
+    }
+    .transition-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .growth-particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+      pointer-events: none;
+    }
+    .particle {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 2s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-origin: center;
+    }
+    .particle.active {
+      opacity: 1;
+    }
+    .particle.growing {
+      transform: scale(1.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <a href="#" class="name" onclick="transitionToHome(event)">Manas Bhatia</a>
+  </div>
+  <div class="transition-overlay"></div>
+  <div class="growth-particles"></div>
+  <script src="sketch.js"></script>
+  <script>
+    function createParticles() {
+      const container = document.querySelector('.growth-particles');
+      const name = document.querySelector('.name');
+      const rect = name.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      
+      // Create more particles in multiple rings
+      const rings = 3;
+      const particlesPerRing = 40;
+      
+      for (let ring = 0; ring < rings; ring++) {
+        for (let i = 0; i < particlesPerRing; i++) {
+          const particle = document.createElement('div');
+          particle.className = 'particle';
+          
+          // Random size between 2 and 8 pixels
+          const size = Math.random() * 6 + 2;
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          
+          // Position particles in expanding rings
+          const angle = (i / particlesPerRing) * Math.PI * 2;
+          const radius = (Math.min(rect.width, rect.height) / 2) * (ring + 1);
+          const x = centerX + Math.cos(angle) * radius;
+          const y = centerY + Math.sin(angle) * radius;
+          
+          particle.style.left = `${x}px`;
+          particle.style.top = `${y}px`;
+          
+          container.appendChild(particle);
+        }
+      }
+    }
+
+    function animateParticles() {
+      const particles = document.querySelectorAll('.particle');
+      particles.forEach((particle, index) => {
+        setTimeout(() => {
+          particle.classList.add('active');
+          
+          // Random movement with larger spread
+          const randomX = (Math.random() - 0.5) * window.innerWidth;
+          const randomY = (Math.random() - 0.5) * window.innerHeight;
+          
+          // Add some random rotation
+          const rotation = Math.random() * 360;
+          
+          particle.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${rotation}deg)`;
+          
+          // Add growing effect after a delay
+          setTimeout(() => {
+            particle.classList.add('growing');
+          }, 500);
+        }, index * 10); // Faster initial spread
+      });
+    }
+
+    function transitionToHome(event) {
+      event.preventDefault();
+      createParticles();
+      animateParticles();
+      document.querySelector('.transition-overlay').classList.add('active');
+      
+      setTimeout(() => {
+        window.location.href = 'projects.html';
+      }, 2000); // Increased transition time
+    }
+  </script>
+</body>
+</html>
