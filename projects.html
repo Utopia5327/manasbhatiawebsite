@@ -124,7 +124,7 @@
             overflow: hidden;
             transition: box-shadow 0.18s, transform 0.18s;
             box-shadow: 0 2px 16px 0 rgba(0,0,0,0.06);
-            aspect-ratio: 3/4;
+            aspect-ratio: 1/1;
         }
         .framer-project-card:hover {
             transform: translateY(-4px) scale(1.02);
@@ -136,11 +136,19 @@
             inset: 0;
             border-radius: inherit;
         }
+        .framer-image-shadow {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .framer-image-shadow img {
             display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             border-radius: inherit;
         }
         .framer-arrow-icon {
@@ -205,7 +213,7 @@
             <a class="framer-project-card" href="./projects/project1.html">
                 <div class="framer-image-container">
                     <div class="framer-image-shadow">
-                        <img src="project1-thumbnail.jpg" alt="Project 1 Thumbnail">
+                        <img src="img/manavcover.jpg" alt="Project 1 Thumbnail">
                     </div>
                 </div>
             </a>
