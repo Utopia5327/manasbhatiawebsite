@@ -11,240 +11,161 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Inter', Arial, sans-serif;
-            background: #141414;
-            color: #fff;
+            font-family: 'Inter', 'General Sans', Arial, sans-serif;
+            background: #fafafa;
+            color: #111;
             min-height: 100vh;
             cursor: url('cursor.svg') 16 16, auto;
         }
-        .main-container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 60px auto 0;
-            padding: 2rem 1rem;
+        .about-section {
+            max-width: 100vw;
+            margin: 80px 0 0 0;
+            padding: 0 3vw 90px 3vw;
         }
-        .profile-card, .bio-card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 18px;
-            box-shadow: 0 4px 32px 0 rgba(0,0,0,0.25);
-            padding: 2.2rem 2rem;
-            backdrop-filter: blur(8px);
+        .name-header {
+            font-size: 9vw;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 0.95;
+            text-align: left;
+            text-transform: uppercase;
+            margin-bottom: 1vw;
+            color: #111;
+            word-break: break-word;
         }
-        .profile-card {
-            width: 340px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 1.5vw;
+            align-items: start;
+            max-width: 100vw;
         }
-        .profile-img {
-            width: 220px;
-            height: 220px;
-            border-radius: 16px;
-            object-fit: cover;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 2px 16px 0 rgba(0,0,0,0.18);
-        }
-        .status-badge {
-            background: linear-gradient(90deg, #4ade80 60%, #22d3ee 100%);
-            color: #181818;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border-radius: 12px;
-            padding: 0.3rem 1rem;
-            margin-bottom: 1.2rem;
-            display: inline-block;
-        }
-        .profile-name {
-            font-size: 1.7rem;
-            font-weight: 600;
-            margin-bottom: 0.2rem;
-        }
-        .profile-title {
-            font-size: 1.1rem;
-            color: #b3b3b3;
-            margin-bottom: 1.2rem;
-        }
-        .profile-socials {
-            display: flex;
-            gap: 1.1rem;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-        .profile-socials a {
-            color: #fff;
-            font-size: 1.3rem;
-            background: rgba(255,255,255,0.08);
-            border-radius: 50%;
-            width: 38px;
-            height: 38px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-            text-decoration: none;
-        }
-        .profile-socials a:hover {
-            background: #232323;
-        }
-        .connect-btn {
-            background: linear-gradient(90deg, #4ade80 60%, #22d3ee 100%);
-            color: #181818;
-            font-weight: 700;
-            border: none;
-            border-radius: 8px;
-            padding: 0.8rem 2.2rem;
-            font-size: 1.1rem;
-            cursor: pointer;
-            margin-top: 0.5rem;
-            transition: background 0.2s;
-        }
-        .connect-btn:hover {
-            background: linear-gradient(90deg, #22d3ee 60%, #4ade80 100%);
-        }
-        .bio-card {
-            flex: 1;
-            min-width: 320px;
-            max-width: 700px;
+        .about-left {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
+            min-height: 30vh;
         }
-        .bio-title {
-            font-size: 2.3rem;
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #bdbdbd;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1vw;
+        }
+        .about-bio {
+            font-size: 1.1vw;
+            line-height: 1.3;
             font-weight: 400;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.01em;
+            color: #111;
+            margin-bottom: 0;
+            margin-top: 1vw;
         }
-        .bio-title span {
-            color: #a3e635;
+        .clients-section {
+            display: flex;
+            flex-direction: row;
+            gap: 2vw;
+            margin-top: 3vw;
+        }
+        .client-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3vw;
+        }
+        .client-label {
+            font-size: 0.8rem;
             font-weight: 600;
+            color: #bdbdbd;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.7vw;
         }
-        .bio-subtitle {
-            color: #b3b3b3;
-            font-size: 1.1rem;
-            margin-bottom: 2.2rem;
-        }
-        .bio-content {
-            color: #e5e5e5;
-            font-size: 1.08rem;
-            line-height: 1.8;
+        .client-item {
+            font-size: 0.8vw;
+            font-weight: 400;
+            color: #111;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
         }
         @media (max-width: 900px) {
-            .main-container {
+            .name-header {
+                font-size: 12vw;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3vw;
+            }
+            .about-bio {
+                font-size: 2.2vw;
+            }
+            .clients-section {
                 flex-direction: column;
-                align-items: stretch;
-                gap: 2rem;
+                gap: 1vw;
+                margin-top: 2vw;
             }
-            .profile-card {
-                width: 100%;
-                margin-bottom: 0.5rem;
+            .client-item {
+                font-size: 1.5vw;
             }
         }
-        .framer-sleek-navbar {
-            position: fixed;
-            top: 24px;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            z-index: 100;
-            pointer-events: none;
-        }
-        .framer-sleek-nav-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 900px;
-            background: rgba(17, 17, 17, 0.7);
-            border-radius: 32px;
-            box-shadow: 0 4px 32px 0 rgba(0,0,0,0.10);
-            border: 1px solid rgba(255,255,255,0.10);
-            backdrop-filter: blur(12px);
-            padding: 0.5rem 2.2rem;
-            pointer-events: auto;
-        }
-        .framer-sleek-logo {
-            display: flex;
-            align-items: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 16px;
-            overflow: hidden;
-            background: #232323;
-            margin-right: 1.5rem;
-        }
-        .framer-sleek-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 16px;
-        }
-        .framer-sleek-links {
-            display: flex;
-            gap: 1.8rem;
-        }
-        .framer-sleek-link {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.18rem;
-            font-weight: 500;
-            padding: 0.5rem 1.5rem;
-            border-radius: 12px;
-            transition: background 0.2s, color 0.2s;
-            display: flex;
-            align-items: center;
-        }
-        .framer-sleek-link:hover, .framer-sleek-link.active {
-            background: rgba(255,255,255,0.10);
-            color: #a3e635;
-        }
-        .main-container {
-            margin-top: 110px;
+        @media (max-width: 600px) {
+            .about-section {
+                padding: 0 2vw 2rem 2vw;
+            }
+            .name-header {
+                font-size: 15vw;
+                margin-bottom: 2vw;
+            }
+            .about-bio {
+                font-size: 3vw;
+            }
+            .client-item {
+                font-size: 2vw;
+            }
         }
         @media (max-width: 700px) {
-            .framer-sleek-nav-wrapper {
-                flex-direction: row;
-                padding: 0.5rem 1rem;
-                max-width: 98vw;
-            }
-            .main-container {
-                margin-top: 90px;
-            }
-            .framer-sleek-links {
-                gap: 1rem;
+            .about-section {
+                margin-top: 60px;
+                padding-bottom: 70px;
             }
         }
     </style>
-    <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div id="site-header"></div>
-    <div class="main-container">
-        <div class="profile-card">
-            <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=400&q=80" alt="Manas Bhatia" class="profile-img">
-            <div class="status-badge">Available for work</div>
-            <div class="profile-name">Hello I am Manas</div>
-            <div class="profile-title">Architect and Computational Designer Based in New York.</div>
-            <div class="profile-socials">
-                <a href="#" title="X"><i class="fab fa-x-twitter"></i></a>
-                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+    <div class="about-section">
+        <h1 class="name-header">Manas Bhatia</h1>
+        <div class="about-content">
+            <div class="about-left">
+                <div>
+                    <p class="section-label">Me :</p>
+                </div>
+                <div class="clients-section">
+                    <div class="client-list">
+                        <p class="client-label">Selected Clients :</p>
+                        <p class="client-item">CNN</p>
+                        <p class="client-item">BBC</p>
+                        <p class="client-item">DEZEEN</p>
+                        <p class="client-item">DESIGNBOOM</p>
+                        <p class="client-item">PBS</p>
+                        <p class="client-item">FORBES</p>
+                        <p class="client-item">COLUMBIA UNIVERSITY</p>
+                    </div>
+                    <div class="client-list">
+                        <p class="client-label">Experience :</p>
+                        <p class="client-item">Computational Design @Columbia GSAPP</p>
+                        <p class="client-item">Former Associate @Ant Studio</p>
+                        <p class="client-item">Guest Lecturer @OP Jindal University</p>
+                        <p class="client-item">Guest Lecturer @University of Toronto</p>
+                        <p class="client-item">Guest Lecturer @Oxford School of Business</p>
+                    </div>
+                </div>
             </div>
-            <button class="connect-btn">Connect with me</button>
-        </div>
-        <div class="bio-card">
-            <div class="bio-title">Manas Bhatia, <span>Your Designer</span></div>
-            <div class="bio-subtitle">Art | Architecture | Computational Design</div>
-            <div class="bio-content">
-                Manas Bhatia is a multidisciplinary designer, exploring the confluence of spatial design, emerging technologies, and visual storytelling. Currently pursuing M.S. in Computational Design Practices at Columbia University's GSAPP, his research focuses on harnessing generative AI for participatory spatial design. At the core of Manas' practice lies a profound curiosity about the intersection of data, computation, and design—leveraging technology to translate urban observations into design projects, analyze complex spatial relationships, and drive meaningful societal impact.<br><br>
-                He sees technology—not as a mere tool—but as an extension of creative intuition, a medium through which ideas are fluidly materialized and future possibilities are critically examined. Before joining Columbia, Manas was an Associate at Ant Studio in India, leading projects across residential, institutional, and public domains. His work spans from a climate-responsive cooling system (CoolAnt) to a state war memorial park, a healthcare facility for an NGO, and a kindergarten school—each engaging with materiality, climate, and cultural specificity.<br><br>
-                His AI-aided speculative work has been exhibited internationally, including at the Château de Loumarin in France, and has been featured on CNN, BBC, Dezeen, Designboom, and other global platforms. He was a featured guest in Episode 06 of the PBS docuseries A Brief History of the Future and was nominated for Forbes 30 Under 30 – Class of 2024 in The Arts. Manas has also delivered guest lectures on AI and design at institutions such as OP Jindal University, the University of Toronto, and the Oxford School of Business.
+            <div>
+                <p class="about-bio">
+                    Indian Architect and Computational Designer with a passion for merging spatial design with emerging technologies. Currently pursuing M.S. in Computational Design Practices at Columbia University's GSAPP, focusing on harnessing generative AI for participatory spatial design. Based in New York, former Associate at Ant Studio and featured in international exhibitions including Château de Loumarin in France.
+                </p>
             </div>
         </div>
     </div>

@@ -1,82 +1,175 @@
-<nav class="framer-sleek-navbar">
-    <div class="framer-sleek-nav-wrapper">
-        <a class="framer-sleek-logo" href="./#hero-section">
-            <img src="https://framerusercontent.com/images/Y7yxqeVWtkTJtBRLqfMgXaslnI.png" alt="Logo">
+<nav class="minimal-navbar">
+    <div class="minimal-nav-wrapper">
+        <a class="minimal-logo" href="./#hero-section">
+            <span>M B</span>
         </a>
-        <div class="framer-sleek-links">
-            <a href="projects.html" class="framer-sleek-link">Projects</a>
-            <a href="about.html" class="framer-sleek-link">About/Contact</a>
+        <div class="minimal-links">
+            <div class="dropdown">
+                <a href="/projects.html" class="glass-link dropdown-toggle">Projects</a>
+                <div class="dropdown-menu">
+                    <a href="projects/project1.html">Project 1</a>
+                    <a href="projects/project2.html">Project 2</a>
+                    <a href="projects/project3.html">Project 3</a>
+                </div>
+            </div>
+            <a href="about.html" class="glass-link">About/Contact</a>
         </div>
     </div>
 </nav>
 <style>
-.framer-sleek-navbar {
+.minimal-navbar {
     position: fixed;
-    top: 24px;
+    top: 0;
     left: 0;
     width: 100%;
-    display: flex;
-    justify-content: center;
     z-index: 100;
     pointer-events: none;
 }
-.framer-sleek-nav-wrapper {
+.minimal-nav-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 900px;
-    background: rgba(17, 17, 17, 0.7);
-    border-radius: 32px;
-    box-shadow: 0 4px 32px 0 rgba(0,0,0,0.10);
-    border: 1px solid rgba(255,255,255,0.10);
-    backdrop-filter: blur(12px);
-    padding: 0.5rem 2.2rem;
+    max-width: none;
+    margin: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0.7rem 1.5rem 0.7rem 1.5rem;
     pointer-events: auto;
 }
-.framer-sleek-logo {
+.minimal-logo {
     display: flex;
     align-items: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 16px;
-    overflow: hidden;
-    background: #232323;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 8px;
+    background: rgba(240, 240, 240, 0.8);
+    font-family: 'General Sans', 'Inter', Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: -0.02em;
     margin-right: 1.5rem;
-}
-.framer-sleek-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 16px;
-}
-.framer-sleek-links {
-    display: flex;
-    gap: 1.8rem;
-}
-.framer-sleek-link {
-    color: #fff;
     text-decoration: none;
-    font-size: 1.18rem;
+    box-shadow: none;
+    border: none;
+}
+.minimal-logo span {
+    padding: 0 12px;
+    line-height: 44px;
+}
+.minimal-links {
+    display: flex;
+    gap: 1.1rem;
+}
+.glass-link {
+    color: #111;
+    text-decoration: none;
+    font-size: 1.08rem;
     font-weight: 500;
-    padding: 0.5rem 1.5rem;
-    border-radius: 12px;
-    transition: background 0.2s, color 0.2s;
+    padding: 0.4rem 1.3rem;
+    border-radius: 8px;
+    background: rgba(240, 240, 240, 0.8);
+    backdrop-filter: blur(7px);
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
+    border: 1px solid rgba(200,200,200,0.18);
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s;
     display: flex;
     align-items: center;
+    opacity: 1;
 }
-.framer-sleek-link:hover, .framer-sleek-link.active {
-    background: rgba(255,255,255,0.10);
-    color: #a3e635;
+.glass-link:hover, .glass-link.active {
+    background: rgba(240, 240, 240, 1);
+    color: #0d0d0d;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.08);
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-toggle {
+    cursor: pointer;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 110%;
+    min-width: 180px;
+    background: rgba(240, 240, 240, 0.95);
+    backdrop-filter: blur(7px);
+    border-radius: 10px;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+    border: 1px solid rgba(200,200,200,0.18);
+    z-index: 200;
+    flex-direction: column;
+    padding: 0.5rem 0;
+}
+.dropdown-menu a {
+    color: #111;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    transition: background 0.18s, color 0.18s;
+    display: block;
+}
+.dropdown-menu a:hover {
+    background: rgba(220, 220, 220, 1);
+    color: #0d0d0d;
+}
+.dropdown:hover .dropdown-menu {
+    display: flex;
 }
 @media (max-width: 700px) {
-    .framer-sleek-nav-wrapper {
+    .minimal-nav-wrapper {
         flex-direction: row;
-        padding: 0.5rem 1rem;
+        padding: 0.7rem 0.7rem;
         max-width: 98vw;
     }
-    .framer-sleek-links {
-        gap: 1rem;
+    .minimal-links {
+        gap: 0.7rem;
+    }
+    .minimal-logo {
+        min-width: 36px;
+        min-height: 36px;
+        font-size: 1rem;
+    }
+    .minimal-logo span {
+        line-height: 36px;
+        padding: 0 8px;
+    }
+    .glass-link {
+        font-size: 0.98rem;
+        padding: 0.3rem 1rem;
+    }
+    .dropdown-menu {
+        left: 0;
+        right: 0;
+        min-width: 140px;
     }
 }
-</style> 
+</style>
+<script>
+// Show dropdown on click for mobile
+const dropdownToggle = document.querySelector('.dropdown-toggle');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+if (dropdownToggle && dropdownMenu) {
+    dropdownToggle.addEventListener('click', function(e) {
+        // Only toggle on mobile
+        if (window.innerWidth <= 900) {
+            e.preventDefault();
+            dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    });
+    // Hide dropdown when clicking outside (mobile)
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 900 && !dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+}
+</script> 
