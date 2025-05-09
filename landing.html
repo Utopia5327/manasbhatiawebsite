@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Welcome</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="sketch-projects.js"></script>
   <style>
     html, body {
       margin: 0;
@@ -13,7 +14,7 @@
       height: 100%;
       overflow: hidden;
       font-family: 'Inter', 'General Sans', Arial, sans-serif;
-      background: #fafafa;
+      background: rgb(252, 250, 245);
       color: #111;
       cursor: url('cursor.svg') 16 16, auto;
     }
@@ -52,6 +53,14 @@
       font-family: 'Inter', 'General Sans', Arial, sans-serif;
       line-height: 0.9;
     }
+    .hindi-name {
+      font-size: 2.5vw;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      margin-top: 0.5rem;
+      color: #999;
+      font-family: 'Inter', 'General Sans', Arial, sans-serif;
+    }
     .name:hover {
       transform: scale(1.05);
       letter-spacing: 0.01em;
@@ -62,7 +71,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #fafafa;
+      background: rgb(252, 250, 245);
       z-index: 1000;
       opacity: 0;
       pointer-events: none;
@@ -86,7 +95,7 @@
       background: #111;
       border-radius: 50%;
       opacity: 0;
-      transition: all 2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       transform-origin: center;
     }
     .particle.active {
@@ -105,10 +114,10 @@
 <body>
   <div class="content">
     <a href="#" class="name" onclick="transitionToHome(event)">Manas Bhatia</a>
+    <div class="hindi-name">मानस भाटिया</div>
   </div>
   <div class="transition-overlay"></div>
   <div class="growth-particles"></div>
-  <script src="sketch-projects.js"></script>
   <script>
     function createParticles() {
       const container = document.querySelector('.growth-particles');
@@ -129,8 +138,10 @@
           const radius = (Math.min(rect.width, rect.height) / 2) * (ring + 1);
           const x = centerX + Math.cos(angle) * radius;
           const y = centerY + Math.sin(angle) * radius;
-          particle.style.left = `${x}px`;
-          particle.style.top = `${y}px`;
+          const startX = Math.random() * window.innerWidth;
+          const startY = Math.random() * window.innerHeight;
+          particle.style.left = `${startX}px`;
+          particle.style.top = `${startY}px`;
           container.appendChild(particle);
         }
       }
@@ -140,14 +151,20 @@
       particles.forEach((particle, index) => {
         setTimeout(() => {
           particle.classList.add('active');
-          const randomX = (Math.random() - 0.5) * window.innerWidth;
-          const randomY = (Math.random() - 0.5) * window.innerHeight;
+          const name = document.querySelector('.name');
+          const rect = name.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          const angle = (index % 40) * (Math.PI * 2 / 40);
+          const radius = (Math.min(rect.width, rect.height) / 2) * (Math.floor(index / 40) + 1);
+          const targetX = centerX + Math.cos(angle) * radius;
+          const targetY = centerY + Math.sin(angle) * radius;
           const rotation = Math.random() * 360;
-          particle.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${rotation}deg)`;
+          particle.style.transform = `translate(${targetX - parseFloat(particle.style.left)}px, ${targetY - parseFloat(particle.style.top)}px) rotate(${rotation}deg)`;
           setTimeout(() => {
             particle.classList.add('growing');
-          }, 500);
-        }, index * 3);
+          }, 100);
+        }, index * 0.5);
       });
     }
     function transitionToHome(event) {
@@ -157,7 +174,7 @@
       document.querySelector('.transition-overlay').classList.add('active');
       setTimeout(() => {
         window.location.href = 'projects.html';
-      }, 2000);
+      }, 1000);
     }
   </script>
 </body>
