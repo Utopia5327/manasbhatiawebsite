@@ -197,6 +197,32 @@
             position: relative;
             z-index: 1;
         }
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .framer-project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .project-details {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -216,12 +242,20 @@
                         <img src="img/manavthumbnail.jpg" alt="Project 1 Thumbnail">
                     </div>
                 </div>
+                <div class="project-overlay">
+                    <div class="project-title">Manav</div>
+                    <div class="project-details">Architectural Design Studio<br>Generative Design</div>
+                </div>
             </a>
             <a class="framer-project-card" href="./projects/project2.html">
                 <div class="framer-image-container">
                     <div class="framer-image-shadow">
                         <img src="img/terracurvetowerthumbnail.jpg" alt="Project 2 Thumbnail">
                     </div>
+                </div>
+                <div class="project-overlay">
+                    <div class="project-title">Terra Curve Tower</div>
+                    <div class="project-details">Computational Design<br>Architectural Research</div>
                 </div>
             </a>
             <a class="framer-project-card" href="./projects/project3.html">
@@ -230,12 +264,20 @@
                         <img src="img/NYCthumbnail.jpg" alt="Project 3 Thumbnail">
                     </div>
                 </div>
+                <div class="project-overlay">
+                    <div class="project-title">NYC Urban Analysis</div>
+                    <div class="project-details">Urban Design<br>Data Visualization</div>
+                </div>
             </a>
             <a class="framer-project-card" href="./projects/project4.html">
                 <div class="framer-image-container">
                     <div class="framer-image-shadow">
                         <img src="img/codesigncanvasthubnail.jpg" alt="Project 4 Thumbnail">
                     </div>
+                </div>
+                <div class="project-overlay">
+                    <div class="project-title">Co-Design Canvas</div>
+                    <div class="project-details">Interactive Design<br>Digital Fabrication</div>
                 </div>
             </a>
             <a class="framer-project-card" href="./projects/project5.html">
@@ -244,12 +286,42 @@
                         <img src="img/tensilebloomthumb2.jpg" alt="Project 5 Thumbnail">
                     </div>
                 </div>
+                <div class="project-overlay">
+                    <div class="project-title">Tensile Bloom</div>
+                    <div class="project-details">Parametric Design<br>Installation Art</div>
+                </div>
             </a>
             <a class="framer-project-card" href="./projects/project6.html">
                 <div class="framer-image-container">
                     <div class="framer-image-shadow">
                         <img src="img/gamethumb.jpg" alt="Project 6 Thumbnail">
                     </div>
+                </div>
+                <div class="project-overlay">
+                    <div class="project-title">Generative Game</div>
+                    <div class="project-details">Interactive Design<br>Game Development</div>
+                </div>
+            </a>
+            <a class="framer-project-card" href="./projects/project7.html">
+                <div class="framer-image-container">
+                    <div class="framer-image-shadow">
+                        <img src="img/compmodelthumb.jpg" alt="Project 7 Thumbnail">
+                    </div>
+                </div>
+                <div class="project-overlay">
+                    <div class="project-title">Computational Modeling</div>
+                    <div class="project-details">Advanced Computation<br>Parametric Design</div>
+                </div>
+            </a>
+            <a class="framer-project-card" href="./projects/project8.html">
+                <div class="framer-image-container">
+                    <div class="framer-image-shadow">
+                        <img src="img/spatialaithumb.jpg" alt="Project 8 Thumbnail">
+                    </div>
+                </div>
+                <div class="project-overlay">
+                    <div class="project-title">Spatial AI</div>
+                    <div class="project-details">AI Research<br>Space Design</div>
                 </div>
             </a>
         </div>
