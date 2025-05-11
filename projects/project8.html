@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatial AI - Project | Manas Bhatia</title>
+    <link rel="stylesheet" href="../css/project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
+    <section class="framer-hero">
+        <div class="framer-hero-image">
+            <img src="../img/codesigncanvascover2.jpg" alt="Co-Design-Canvas Project Main Image">
+        </div>
+        <div class="framer-hero-content">
+            <div class="framer-hero-col-left">
+                <h2 class="framer-hero-title">Spatial AI</h2>
+                <div class="framer-hero-meta">
+                    <div class="framer-hero-meta-row">
+                        <div class="framer-hero-meta-block">
+                            <span class="framer-hero-meta-label">Project Type</span>
+                            <span class="framer-hero-meta-value">Space Design</span>
+                        </div>
+                        <div class="framer-hero-meta-block">
+                            <span class="framer-hero-meta-label">Tools Used</span>
+                            <span class="framer-hero-meta-value">Python, TensorFlow, Rhino</span>
+                        </div>
+                    </div>
+                    <div class="framer-hero-meta-row">
+                        <div class="framer-hero-meta-block">
+                            <span class="framer-hero-meta-label">Course</span>
+                            <span class="framer-hero-meta-value">AI Research</span>
+                        </div>
+                        <div class="framer-hero-meta-block">
+                            <span class="framer-hero-meta-label">Course Instructors</span>
+                            <span class="framer-hero-meta-value">Faculty Name</span>
+                        </div>
+                    </div>
+                </div>
+                <a class="framer-hero-btn" href="#" target="_blank" rel="noopener">View Project</a>
+            </div>
+            <div class="framer-hero-col-right">
+                <div class="framer-hero-desc">
+                    This project investigates the potential of artificial intelligence in spatial design and architectural planning.<br><br>
+                    By leveraging machine learning algorithms and neural networks, we developed a system that can analyze spatial patterns, predict user behavior, and generate optimized spatial configurations.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="framer-krewez">
+        <div class="framer-container">
+            <div class="framer-header">
+                <div class="framer-text-container">
+                    <h5 class="framer-title">about.</h5>
+                </div>
+            </div>
+            <div class="framer-description">
+                <p class="framer-text">This project investigates the potential of artificial intelligence in spatial design and architectural planning. By leveraging machine learning algorithms and neural networks, we developed a system that can analyze spatial patterns, predict user behavior, and generate optimized spatial configurations. The research involved training AI models on extensive datasets of successful architectural spaces, user movement patterns, and environmental factors. This allowed the system to understand and predict how different spatial configurations affect human behavior and experience.</p>
+            </div>
+            <div class="framer-images">
+                <div class="framer-image-container">
+                    <img src="../img/spatialai1.jpg" alt="Spatial AI Main View" style="width: 1200px; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="framer-krewez">
+        <div class="framer-container">
+            <div class="framer-header">
+                <div class="framer-text-container">
+                    <h5 class="framer-title">Research.</h5>
+                </div>
+            </div>
+            <div class="framer-description">
+                <p class="framer-text">The project demonstrates how AI can be used as a powerful tool in the architectural design process, offering new insights and possibilities for creating more responsive and human-centered spaces. The results show promising potential for AI-assisted design in creating more efficient, sustainable, and user-friendly environments.</p>
+            </div>
+            <div class="framer-images">
+                <div class="framer-image-container">
+                    <img src="../img/spatialai2.jpg" alt="Spatial AI Research" style="width: 1200px; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <script>
+        function includeHTML(id, url) {
+            fetch(url)
+                .then(res => res.text())
+                .then(html => { document.getElementById(id).innerHTML = html; });
+        }
+        includeHTML('site-footer', '../footer.html');
+    </script>
+</body>
+</html> 
