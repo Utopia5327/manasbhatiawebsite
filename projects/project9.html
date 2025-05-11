@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Data Analysis - Project | Manas Bhatia</title>
+    <link rel="stylesheet" href="../css/project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        fetch('../header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
+    <section class="framer-hero">
+        <div class="framer-hero-image">
+            <img src="../img/environmentaldata.jpg" alt="Environmental Data Analysis Project Main Image">
+        </div>
+        <div class="framer-hero-content">
+            <div class="framer-hero-col-left">
+                <h2 class="framer-hero-title">Environmental Data Analysis</h2>
+                <div class="framer-hero-meta">
+                    <div class="framer-hero-meta-row">
+                        <div class="framer-hero-meta-block">
+                            <span class="framer-hero-meta-label">Project Type</span>
+                            <span class="framer-hero-meta-value">Data Science</span>
+                        </div>
+                        <div class="framer-hero-meta-block">
+                            <span class="framer-hero-meta-label">Tools Used</span>
+                            <span class="framer-hero-meta-value">Python, Pandas, Matplotlib</span>
+                        </div>
+                    </div>
+                    <div class="framer-hero-meta-row">
+                        <div class="framer-hero-meta-block">
+                            <span class="framer-hero-meta-label">Course</span>
+                            <span class="framer-hero-meta-value">Data Analysis</span>
+                        </div>
+                        <div class="framer-hero-meta-block">
+                            <span class="framer-hero-meta-label">Course Instructors</span>
+                            <span class="framer-hero-meta-value">Faculty Name</span>
+                        </div>
+                    </div>
+                </div>
+                <a class="framer-hero-btn" href="#" target="_blank" rel="noopener">View Project</a>
+            </div>
+            <div class="framer-hero-col-right">
+                <div class="framer-hero-desc">
+                    This project focuses on analyzing environmental data to understand patterns and trends in climate change.<br><br>
+                    Using advanced data analysis techniques, we processed and visualized large datasets to identify correlations between various environmental factors and their impact on climate patterns.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="framer-krewez">
+        <div class="framer-container">
+            <div class="framer-header">
+                <div class="framer-text-container">
+                    <h5 class="framer-title">about.</h5>
+                </div>
+            </div>
+            <div class="framer-description">
+                <p class="framer-text">This project delves into the complex world of environmental data analysis, focusing on climate change patterns and their implications. We collected and processed extensive datasets from various environmental monitoring stations, including temperature records, precipitation levels, air quality measurements, and greenhouse gas emissions. Using Python and its powerful data analysis libraries, we developed a comprehensive system to clean, process, and analyze this data, uncovering significant patterns and correlations that contribute to our understanding of climate change.</p>
+            </div>
+            <div class="framer-images">
+                <div class="framer-image-container">
+                    <img src="../img/environmentaldata1.jpg" alt="Environmental Data Analysis Main View" style="width: 1200px; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="framer-krewez">
+        <div class="framer-container">
+            <div class="framer-header">
+                <div class="framer-text-container">
+                    <h5 class="framer-title">Methodology.</h5>
+                </div>
+            </div>
+            <div class="framer-description">
+                <p class="framer-text">Our methodology involved a systematic approach to data analysis, including data collection, preprocessing, statistical analysis, and visualization. We employed various statistical methods and machine learning algorithms to identify trends and patterns in the environmental data. The project resulted in the development of predictive models that can help forecast future environmental conditions and inform policy decisions related to climate change mitigation and adaptation strategies.</p>
+            </div>
+            <div class="framer-images">
+                <div class="framer-image-container">
+                    <img src="../img/environmentaldata2.jpg" alt="Environmental Data Analysis Methodology" style="width: 1200px; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <script>
+        function includeHTML(id, url) {
+            fetch(url)
+                .then(res => res.text())
+                .then(html => { document.getElementById(id).innerHTML = html; });
+        }
+        includeHTML('site-footer', '../footer.html');
+    </script>
+</body>
+</html> 
