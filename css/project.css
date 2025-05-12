@@ -326,6 +326,33 @@ body {
     color: var(--grey);
 }
 
+.project-link-container {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+.project-link i {
+    font-size: 0.9em;
+}
+
 @media (max-width: 900px) {
     .framer-hero-content {
         flex-direction: column;
