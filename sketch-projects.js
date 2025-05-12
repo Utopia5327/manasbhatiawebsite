@@ -1,10 +1,10 @@
 let branches = [];
-const initialCount = 6;
+const initialCount = 12;
 const stepSize     = 1.5;
-const branchProb   = 0.03;
-const maxLifeMin   = 80;
-const maxLifeMax   = 120;
-const maxBranches  = 300;
+const branchProb   = 0.025;
+const maxLifeMin   = 100;
+const maxLifeMax   = 140;
+const maxBranches  = 400;
 const fadeAlpha    = 5;
 
 function setup() {

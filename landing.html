@@ -30,7 +30,7 @@
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       text-align: center;
       opacity: 1;
@@ -38,6 +38,9 @@
     }
     .content.fade-out {
       opacity: 0;
+    }
+    .name-container {
+      margin-top: 35vh;
     }
     .name {
       font-size: 6vw;
@@ -60,6 +63,20 @@
       margin-top: 0.5rem;
       color: #999;
       font-family: 'Inter', 'General Sans', Arial, sans-serif;
+    }
+    .click-instruction {
+      font-size: 0.9vw;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      margin-bottom: 10vh;
+      color: #666;
+      font-family: 'Inter', 'General Sans', Arial, sans-serif;
+      opacity: 0.8;
+      animation: fadeInOut 2s ease-in-out infinite;
+    }
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.8; }
     }
     .name:hover {
       transform: scale(1.05);
@@ -112,9 +129,12 @@
   </style>
 </head>
 <body>
-  <div class="content">
-    <a href="#" class="name" onclick="transitionToHome(event)">Manas Bhatia</a>
-    <div class="hindi-name">मानस भाटिया</div>
+  <div class="content" onclick="transitionToHome(event)">
+    <div class="name-container">
+      <a href="#" class="name">Manas Bhatia</a>
+      <div class="hindi-name">मानस भाटिया</div>
+    </div>
+    <div class="click-instruction">Click anywhere to enter</div>
   </div>
   <div class="transition-overlay"></div>
   <div class="growth-particles"></div>
