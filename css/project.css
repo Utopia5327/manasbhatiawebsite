@@ -131,12 +131,17 @@ body {
     backdrop-filter: blur(7px);
     box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
     width: fit-content;
-    align-self: flex-start;
 }
 
 .framer-hero-btn:hover {
     background: rgba(240, 240, 240, 1);
     box-shadow: 0 4px 16px 0 rgba(0,0,0,0.08);
+}
+
+.framer-hero-buttons {
+    display: flex;
+    gap: 1rem;
+    align-self: flex-start;
 }
 
 .framer-krewez {
