@@ -55,10 +55,7 @@
             </div>
             <div class="framer-hero-col-right">
                 <div class="framer-hero-desc">
-                    This course introduced advanced computational design
-methodologies using Grasshopper, progressing from foundational
-parametric modeling exercises to the development of urban-scale
-procedural models.
+                    Over the semester, we leveraged Rhino and Grasshopper as a powerful GIS and computational design suite—importing shapefiles and CSVs, performing spatial joins, and extracting geometry to map streets, parcels, and environmental data—while simultaneously building parametric building and network models linked to daylight, wind, and energy analyses. We developed custom Grasshopper tools for origin–destination and walkability metrics, iteratively testing scenarios via live sliders, then exported our results as GeoJSONs and 3D JSONs for interactive web visualization in Scout and Mapbox.
                 </div>
             </div>
         </div>
@@ -68,7 +65,8 @@ procedural models.
         <div class="framer-container">
             <div class="framer-header">
                 <div class="framer-text-container">
-                    <h5 class="framer-title">about.</h5>
+                    <h5 class="framer-title">Asking Questions With Data
+                    </h5>
                 </div>
             </div>
 
@@ -86,17 +84,27 @@ procedural models.
                     analysis grounded in real-world data.</p>
             </div>
 
-            <div class="framer-images">
-                <div class="framer-image-container">
-                    <img src="../img/urbanobservation.jpg" alt="Computational Modeling Main View" style="width: 1200px; height: 100%; object-fit: cover;">
-                </div>
-            </div>
+           
             
             <div class="framer-images">
                 <div class="framer-image-container">
                     <img src="../img/compmodelthumb.jpg" alt="Computational Modeling Main View" style="width: 1200px; height: 100%; object-fit: cover;">
                 </div>
             </div>
+
+            <div class="framer-images">
+                <div class="framer-image-container">
+                    <img src="../img/urbanobservation.jpg" alt="Computational Modeling Main View" style="width: 1200px; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+
+            <div class="framer-images">
+                <div class="framer-image-container">
+                    <img src="../img/goldcity.jpg" alt="Computational Modeling Process" style="width: 1200px; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+            
+
         </div>
     </section>
 
@@ -120,12 +128,7 @@ procedural models.
                     </iframe>
                 </div>
             </div>
-            <div class="framer-images">
-                <div class="framer-image-container">
-                    <img src="../img/goldcity.jpg" alt="Computational Modeling Process" style="width: 1200px; height: 100%; object-fit: cover;">
-                </div>
-            </div>
-            
+           
         </div>
     </section>
 
@@ -144,34 +147,154 @@ procedural models.
 
 
             <div class="framer-images">
-                <div class="framer-image-container">
-                    <img src="../img/viewanalysis.jpg" alt="Computational Modeling Process" style="width: 1200px; height: 100%; object-fit: cover;">
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-slide">
+                            <img src="../img/viewanalysis.jpg" alt="Computational Modeling Process" loading="lazy">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../img/ghworkflow.jpg" alt="Computational Modeling Process" loading="lazy">
+                        </div>
+                    </div>
+                    <button class="carousel-button prev">❮</button>
+                    <button class="carousel-button next">❯</button>
                 </div>
             </div>
 
-            <div class="framer-images">
-                <div class="framer-image-container">
-                    <img src="../img/ghworkflow.jpg" alt="Computational Modeling Process" style="width: 1200px; height: 100%; object-fit: cover;">
+            <style>
+                .carousel-container {
+                    position: relative;
+                    width: 100%;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    overflow: hidden;
+                }
+
+                .carousel {
+                    display: flex;
+                    transition: transform 0.5s ease-in-out;
+                }
+
+                .carousel-slide {
+                    min-width: 100%;
+                    box-sizing: border-box;
+                }
+
+                .carousel-slide img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+
+                .carousel-button {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: rgba(255, 255, 255, 0.7);
+                    border: none;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    font-size: 18px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: background-color 0.3s;
+                }
+
+                .carousel-button:hover {
+                    background: rgba(255, 255, 255, 0.9);
+                }
+
+                .carousel-button.prev {
+                    left: 10px;
+                }
+
+                .carousel-button.next {
+                    right: 10px;
+                }
+            </style>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const carousel = document.querySelector('.carousel');
+                    const slides = document.querySelectorAll('.carousel-slide');
+                    const prevButton = document.querySelector('.carousel-button.prev');
+                    const nextButton = document.querySelector('.carousel-button.next');
+                    let currentSlide = 0;
+
+                    function updateCarousel() {
+                        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+                    }
+
+                    prevButton.addEventListener('click', () => {
+                        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                        updateCarousel();
+                    });
+
+                    nextButton.addEventListener('click', () => {
+                        currentSlide = (currentSlide + 1) % slides.length;
+                        updateCarousel();
+                    });
+                });
+            </script>
+
+         
+        </div>
+    </section>
+
+
+    <section class="framer-krewez">
+        <div class="framer-container">
+            <div class="framer-header">
+                <div class="framer-text-container">
+                    <h5 class="framer-title">GH to GIS</h5>
                 </div>
             </div>
-
-
             <div class="framer-description">
-                <p class="framer-text">Other work from the course...</p>
+                <p class="framer-text">Using Rhino and grasshopper as GIS tool to derive spatial relationships</p>
             </div>
-
-
-
-
             <div class="framer-images">
-                <div class="framer-image-container">
-                    <img src="../img/compmodelsheet2.jpg" alt="Computational Modeling Process" style="width: 1200px; height: 100%; object-fit: cover;">
+                <div class="framer-image-row">
+                    <div class="framer-image-container">
+                        <img src="../img/compGISgif.gif" alt="NYC Carbon Atlas Overview" loading="lazy">
+                    </div>
+                </div>
+                <div class="framer-image-row">
+                    <div class="framer-image-container">
+                        <img src="../img/compmodelGIS.jpg" alt="NYC Carbon Atlas Analysis" loading="lazy">
+                    </div>
+                    
                 </div>
             </div>
         </div>
     </section>
 
+
+    <section class="framer-krewez">
+        <div class="framer-container">
+            <div class="framer-header">
+                <div class="framer-text-container">
+                    <h5 class="framer-title">Procedural Urbanism</h5>
+                </div>
+            </div>
+            <div class="framer-description">
+                <p class="framer-text">For this course, we built a parametric design space in Grasshopper—generating and exporting hundreds of massing options and their performance metrics—compiled the results into a structured CSV and color‐coded worksheet, analyzed form–performance trends to uncover how street grids and density distributions impact daylight and views, and distilled our findings into clear scenario-based design guidelines and a concise slide deck reflecting on our workflow, biases, and next steps.</p>
+            </div>
+           
+    <div class="framer-images">
+        <div class="framer-image-container">
+            <img src="../img/compmodelsheet2.jpg" alt="Computational Modeling Process" style="width: 1200px; height: 100%; object-fit: cover;">
+        </div>
+    </div>
     
+           
+        </div>
+    </section>
+
+
+
 
     <div id="site-footer"></div>
     <script>
