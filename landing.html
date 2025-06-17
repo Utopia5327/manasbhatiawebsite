@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Welcome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <script src="sketch-projects.js"></script>
   <style>
@@ -13,7 +14,7 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      font-family: 'Inter', 'General Sans', Arial, sans-serif;
+      font-family: 'Asher Punk Demo Version', Arial, sans-serif;
       background: rgb(252, 250, 245);
       color: #111;
       cursor: url('cursor.svg') 16 16, auto;
@@ -43,34 +44,34 @@
       margin-top: 35vh;
     }
     .name {
-      font-size: 6vw;
-      font-weight: 900;
-      letter-spacing: -0.04em;
+      font-size: 8vw;
+      font-weight: 600;
+      letter-spacing: -0.03em;
       text-transform: uppercase;
       cursor: url('cursor.svg') 16 16, pointer;
       transition: all 0.5s ease;
       padding: 1rem 2rem;
-      color: #111;
+      color: #3e3e3e;
       text-decoration: none;
       position: relative;
-      font-family: 'Inter', 'General Sans', Arial, sans-serif;
+      font-family: 'Asher Punk Demo Version', Arial, sans-serif;
       line-height: 0.9;
     }
     .hindi-name {
-      font-size: 2.0vw;
-      font-weight: 200;
+      font-size: 1.0vw;
+      font-weight: bold;
       letter-spacing: 0.1em;
       margin-top: 0.5rem;
-      color: #999;
-      font-family: 'Inter', 'General Sans', Arial, sans-serif;
+      color: #3e3e3e;
+      font-family: 'Poppins', sans-serif;
     }
     .click-instruction {
       font-size: 0.9vw;
       font-weight: 300;
       letter-spacing: 0.05em;
       margin-bottom: 10vh;
-      color: #666;
-      font-family: 'Inter', 'General Sans', Arial, sans-serif;
+      color: #3e3e3e;
+      font-family: 'Poppins', sans-serif;
       opacity: 0.8;
       animation: fadeInOut 2s ease-in-out infinite;
     }
@@ -88,7 +89,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgb(252, 250, 245);
+      background: rgb(255, 255, 255);
       z-index: 1000;
       opacity: 0;
       pointer-events: none;
@@ -109,7 +110,7 @@
     }
     .particle {
       position: absolute;
-      background: #111;
+      background: #525252;
       border-radius: 50%;
       opacity: 0;
       transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -132,7 +133,7 @@
   <div class="content" onclick="transitionToHome(event)">
     <div class="name-container">
       <a href="#" class="name">Manas Bhatia</a>
-      <div class="hindi-name">मानस भाटिया</div>
+      <div class="hindi-name">Architecture | Computational Design</div>
     </div>
     <div class="click-instruction">Click anywhere to enter</div>
   </div>
