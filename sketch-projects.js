@@ -10,14 +10,23 @@ const fadeAlpha    = 5;
 function setup() {
   let cnv = createCanvas(windowWidth, windowHeight);
   cnv.id('mycelium-canvas');
-  background(255); // white background
+  
+  // Set initial background based on current theme
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const bgColor = isDark ? color(26, 26, 26) : color(252, 250, 245);
+  background(bgColor);
+  
   frameRate(30);
   spawnCluster();
 }
 
 function draw() {
   noStroke();
-  fill(255, 255, 255, fadeAlpha); // white fade
+  
+  // Use theme-appropriate background color for fade
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const fadeColor = isDark ? color(26, 26, 26, fadeAlpha) : color(252, 250, 245, fadeAlpha);
+  fill(fadeColor);
   rect(0, 0, width, height);
 
   for (let i = branches.length - 1; i >= 0; i--) {
@@ -60,7 +69,12 @@ class Branch {
 
     let next = p5.Vector.add(this.pos, this.dir);
     strokeWeight(this.weight);
-    stroke(20, map(this.depth, 0, 7, 0, 200)); // black mycelium
+    
+    // Use theme-appropriate stroke color
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const strokeColor = isDark ? color(200, map(this.depth, 0, 7, 0, 200)) : color(20, map(this.depth, 0, 7, 0, 200));
+    stroke(strokeColor);
+    
     line(this.pos.x, this.pos.y, next.x, next.y);
 
     this.pos = next;
@@ -82,4 +96,11 @@ class Branch {
       this.finished = true;
     }
   }
-} 
+}
+
+// Listen for theme changes and update the canvas
+window.addEventListener('themeChange', function(e) {
+  const isDark = e.detail.theme === 'dark';
+  const bgColor = isDark ? color(26, 26, 26) : color(252, 250, 245);
+  background(bgColor);
+}); 

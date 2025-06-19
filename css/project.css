@@ -5,6 +5,23 @@
     --text-color: #111;
     --light-text: #333;
     --grey: #787878;
+    --border-color: rgba(200,200,200,0.18);
+    --shadow-color: rgba(0,0,0,0.04);
+    --shadow-hover: rgba(0,0,0,0.08);
+    --image-bg: #f5f5f5;
+}
+
+[data-theme="dark"] {
+    --main-bg: #1a1a1a;
+    --card-bg: rgba(60, 60, 60, 0.8);
+    --border-radius: 20px;
+    --text-color: #ffffff;
+    --light-text: #cccccc;
+    --grey: #a0a0a0;
+    --border-color: rgba(80, 80, 80, 0.3);
+    --shadow-color: rgba(0,0,0,0.2);
+    --shadow-hover: rgba(0,0,0,0.3);
+    --image-bg: #2d2d2d;
 }
 
 body {
@@ -15,6 +32,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .framer-hero {
@@ -77,6 +95,7 @@ body {
     color: var(--text-color);
     margin-bottom: 0.5rem;
     text-align: left;
+    transition: color 0.3s ease;
 }
 
 .framer-hero-desc {
@@ -85,6 +104,7 @@ body {
     line-height: 1.6;
     margin-bottom: 1.2rem;
     text-align: left;
+    transition: color 0.3s ease;
 }
 
 .framer-hero-meta {
@@ -108,18 +128,20 @@ body {
 .framer-hero-meta-label {
     color: var(--grey);
     font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
 .framer-hero-meta-value {
     color: var(--text-color);
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .framer-hero-btn {
     display: inline-block;
     background: var(--card-bg);
     color: var(--text-color);
-    border: 1px solid rgba(200,200,200,0.18);
+    border: 1px solid var(--border-color);
     border-radius: 100px;
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
@@ -129,13 +151,13 @@ body {
     text-decoration: none;
     transition: all 0.2s;
     backdrop-filter: blur(7px);
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
+    box-shadow: 0 2px 12px 0 var(--shadow-color);
     width: fit-content;
 }
 
 .framer-hero-btn:hover {
-    background: rgba(240, 240, 240, 1);
-    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.08);
+    background: var(--card-bg);
+    box-shadow: 0 4px 16px 0 var(--shadow-hover);
 }
 
 .framer-hero-buttons {
@@ -168,6 +190,7 @@ body {
     font-weight: 600;
     color: var(--text-color);
     margin: 0;
+    transition: color 0.3s ease;
 }
 
 .framer-link {
@@ -176,15 +199,15 @@ body {
     text-decoration: none;
     padding: 0.75rem 1.5rem;
     border-radius: 100px;
-    border: 1px solid rgba(200,200,200,0.18);
+    border: 1px solid var(--border-color);
     transition: all 0.2s;
     backdrop-filter: blur(7px);
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
+    box-shadow: 0 2px 12px 0 var(--shadow-color);
 }
 
 .framer-link:hover {
-    background: rgba(240, 240, 240, 1);
-    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.08);
+    background: var(--card-bg);
+    box-shadow: 0 4px 16px 0 var(--shadow-hover);
 }
 
 .framer-description {
@@ -196,6 +219,7 @@ body {
     line-height: 1.8;
     color: var(--text-color);
     margin: 0;
+    transition: color 0.3s ease;
 }
 
 .framer-images {
@@ -226,7 +250,8 @@ body {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    background: #f5f5f5;
+    background: var(--image-bg);
+    transition: background 0.3s ease;
 }
 
 .framer-image-container img {
@@ -241,8 +266,9 @@ body {
     aspect-ratio: 16/9;
     border-radius: 12px;
     overflow: hidden;
-    background: #f5f5f5;
+    background: var(--image-bg);
     margin-top: 2rem;
+    transition: background 0.3s ease;
 }
 
 .video-container video {
@@ -262,6 +288,7 @@ body {
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 .project-content p {
@@ -273,6 +300,8 @@ body {
     font-weight: 600;
     display: block;
     margin-bottom: 0.5rem;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 .project-content em {
@@ -281,6 +310,7 @@ body {
     font-style: normal;
     display: block;
     margin-bottom: 2rem;
+    transition: color 0.3s ease;
 }
 
 .project-content figure {
@@ -297,6 +327,7 @@ body {
     color: var(--grey);
     font-size: 0.95rem;
     text-align: center;
+    transition: color 0.3s ease;
 }
 
 .project-content iframe {
@@ -317,18 +348,22 @@ body {
 .project-content h3 {
     font-size: 1.3rem;
     margin: 3rem 0 1.5rem;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 .project-content hr {
     margin: 4rem 0;
     border: none;
-    border-top: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid var(--border-color);
+    transition: border-color 0.3s ease;
 }
 
 .footnotes {
     margin-top: 4rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid var(--border-color);
+    transition: border-color 0.3s ease;
 }
 
 .footnotes-list {
@@ -340,11 +375,13 @@ body {
     margin-bottom: 1rem;
     font-size: 0.9rem;
     color: var(--grey);
+    transition: color 0.3s ease;
 }
 
 .footnote-backref {
     text-decoration: none;
     color: var(--grey);
+    transition: color 0.3s ease;
 }
 
 .project-link-container {
@@ -357,8 +394,8 @@ body {
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--text-color);
+    color: var(--main-bg);
     text-decoration: none;
     border-radius: 4px;
     font-weight: 500;
@@ -366,7 +403,7 @@ body {
 }
 
 .project-link:hover {
-    background-color: #333;
+    background-color: var(--grey);
     transform: translateY(-2px);
 }
 
